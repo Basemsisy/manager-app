@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
-import { ListView, View } from 'react-native';
+import { ListView, View, Text } from 'react-native';
 import {connect} from 'react-redux';
 import {employeesFetch} from '../actions';
 import ListItem from './ListItem';
+import {Spinner} from './common'
+
 
 class EmployeeList extends Component {
 
@@ -28,25 +30,29 @@ class EmployeeList extends Component {
   renderRow(employee) {
     return <ListItem employee={employee}/>;
   }
-  render () {
-    
+
+  renderContent = () => {
+    if(this.props.loading) {
+      return <Spinner/>
+    } 
+     return <ListView enableEmptySections dataSource={this.dataSource} renderRow={this.renderRow}/>
+  }
+
+  render() {
     return (
       <View style={{backgroundColor: '#FFF', flex: 1}}>
-        <ListView
-          enableEmptySections
-          dataSource={this.dataSource}
-          renderRow={this.renderRow}
-        />
+        {this.renderContent()}
       </View>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  const employees = _.map(state.employees, (val, uid) => {
+  const employees = _.map(state.employees.employees_data, (val, uid) => {
     return {...val, uid}
-  })
-  return {employees}
+  });
+  const {loading} = state.employees
+  return {employees, loading}
 }
 
 export default connect(mapStateToProps, { employeesFetch })(EmployeeList)

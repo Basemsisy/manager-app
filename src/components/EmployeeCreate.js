@@ -4,7 +4,6 @@ import { Card, CardSection, Button } from './common';
 import {employeeUpdate, employeeCreate} from '../actions';
 import EmployeeForm from './EmployeeForm';
 
-
 class EmployeeCreate extends Component {
 
   onButtonPress = () => {

@@ -10,7 +10,6 @@ export default class ListItem extends Component {
   }
 
   render() {
-    console.log(this.props);
     const {name} = this.props.employee
     return (
       <TouchableWithoutFeedback onPress={this.onRowPress}>

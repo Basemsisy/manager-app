@@ -1,10 +1,8 @@
 {
   "expoServerPort": 19000,
-  "webpackServerPort": null,
-  "expoServerNgrokUrl": "https://gf-w3r.anonymous.manager.exp.direct",
-  "packagerNgrokUrl": "https://packager.gf-w3r.anonymous.manager.exp.direct",
-  "ngrokPid": 10160,
-  "devToolsPort": 19002,
   "packagerPort": 19001,
-  "packagerPid": 12400
+  "packagerPid": 4636,
+  "expoServerNgrokUrl": "https://gf-w3r.basemsisy.manager.exp.direct",
+  "packagerNgrokUrl": "https://packager.gf-w3r.basemsisy.manager.exp.direct",
+  "ngrokPid": 9324
 }

@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, BackHandler, Alert} from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged , LoginUser } from '../actions';
 import {Card, CardSection, Input, Button, Spinner} from './common';
 
-
 class LoginForm extends Component{
 
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  handleBackButton = () => {
+    BackHandler.exitApp();
+    return true;
+  }
+  
   onEmailChange = (text) => {
     this.props.emailChanged(text);
-    
   }
 
   onPasswordChange = (text) => {

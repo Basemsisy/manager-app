@@ -17,7 +17,8 @@ const styles = {
     alignItems: 'center',
     flexDirection: 'row',
     borderBottomWidth: 1,
-    borderColor: '#DDD'
+    borderColor: '#DDD',
+    backgroundColor: '#FFF'
   }
 }
 export { CardSection }
